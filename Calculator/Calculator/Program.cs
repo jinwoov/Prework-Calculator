@@ -43,20 +43,25 @@ namespace Calculator
             }
             catch (Exception)
             {
-
+                // User may have enter wrong value
                 Console.WriteLine("You have put invalid input, please restart!");
             }  
         }
 
         public static void MainMenu(string name)
         {
+            // declaring two number value
             int firstValue;
             int secondValue;
+
+            // Asking which operator user want to use
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Please choose operator for Awesome calculator (+, -, * , /)");
             Console.ResetColor();
             string userChoice = Console.ReadLine();
             bool userBool = false;
+
+            // Checking if the input is correct otherwise will run the while loop
             while (!userBool)
             {
                 if (userChoice == "+" || userChoice == "-" || userChoice == "*" || userChoice == "/")
@@ -85,6 +90,7 @@ namespace Calculator
                 secondBool = Int32.TryParse(Console.ReadLine(), out secondValue);
             }
 
+            // Using input to run the methods 
             if (userChoice == "+") 
             {
                 Add(firstValue, secondValue);
